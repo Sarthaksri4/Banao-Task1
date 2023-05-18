@@ -30,13 +30,13 @@ html {
     color: #5C5D5D;
     margin-left: 3%;
 }
-.celabel{
+.label{
     margin-left: 15%
 }
-.celabel2{
+.label2{
     margin-left: 15%
 }
-.whole{
+.screen{
     margin-top: 20px;
     margin-left: 15%;
     margin-right: 15%;
@@ -45,12 +45,12 @@ html {
     margin-left: 15%;
     margin-right: 15%;
 }
-.wholeleft{
+.screenleft{
     margin-left: 15%;
     display: flex;
     justify-content: space-between;
 }
-.wholeright{
+.screenright{
     margin-right: 17.5%;
     width: 243px;
 }
@@ -59,13 +59,13 @@ html {
 }
 
 @media screen and (max-width: 1600px) {
-    .celabel{
+    .label{
         margin-left: 11.25%
     }
-    .celabel2{
+    .label2{
         margin-left: 11.25%
     }
-    .whole{
+    .screen{
         margin-left: 11.25%;
         margin-right: 11.25%
     }
@@ -73,10 +73,10 @@ html {
         margin-left: 11.25%;
         margin-right: 11.25%
     }
-    .wholeleft{
+    .screenleft{
         margin-left: 11.25%
     }
-    .wholeright{
+    .screenright{
         margin-right: 13.125%
     }
     .closebtn{
@@ -84,13 +84,13 @@ html {
     }
 }
 @media screen and (max-width: 1200px) {
-    .celabel{
+    .label{
         margin-left: 8%
     }
-    .celabel2{
+    .label2{
         margin-left: 8%
     }
-    .whole{
+    .screen{
         margin-left: 7.5%;
         margin-right: 7.5%;
     }
@@ -98,10 +98,10 @@ html {
         margin-left: 7.5%;
         margin-right: 7.5%;
     }
-    .wholeleft{
+    .screenleft{
         margin-left: 7.5%;
     }
-    .wholeright{
+    .screenright{
         margin-right: 8.75%;
     }
     .closebtn{
@@ -109,13 +109,13 @@ html {
     }
 }
 @media screen and (max-width: 1000px) {
-    .celabel{
+    .label{
         margin-left: 3.75%
     }
-    .celabel2{
+    .label2{
         margin-left: 3.75%
     }
-    .whole{
+    .screen{
         margin-left: 3.75%;
         margin-right: 3.75%;
     }
@@ -123,10 +123,10 @@ html {
         margin-left: 3.75%;
         margin-right: 3.75%;
     }
-    .wholeleft{
+    .screenleft{
         margin-left: 3.75%;
     }
-    .wholeright{
+    .screenright{
         margin-right: 4.375%;
     }
     .closebtn{
@@ -137,7 +137,7 @@ html {
       }
 }
 @media screen and (max-width: 790px) {
-    .whole{
+    .screen{
         margin-left: 0%;
         margin-right: 0%;
     }
@@ -145,10 +145,10 @@ html {
         margin-left: 0%;
         margin-right: 0%;
     }
-    .wholeleft{
+    .screenleft{
         margin-left: 0%;
     }
-    .wholeright{
+    .screenright{
         margin-right: 0%;
     }
 }

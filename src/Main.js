@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
+import { useMediaQuery } from 'react-responsive'
 import './Main.css'
-import atglogo from './images/Union_1.png'
-import banner from './images/Rectangle_2.png'
+import atgooglelogo from './images/Union_1.png'
+import mainphoto from './images/Rectangle_2.png'
 import img1 from './images/Rectangle3.png'
 import img2 from './images/Rectangle4.png'
 import img3 from './images/Rectangle5.png'
@@ -9,10 +10,10 @@ import img4 from './images/Rectangle6.png'
 import img5 from './images/Rectangle7.png'
 import img6 from './images/Rectangle8.png'
 import img7 from './images/Rectangle9.png'
-import u1 from './images/user1.png'
-import u2 from './images/user2.png'
-import u3 from './images/user3.png'
-import u4 from './images/user4.png'
+import user1 from './images/user1.png'
+import user2 from './images/user2.png'
+import user3 from './images/user3.png'
+import user4 from './images/user4.png'
 import searchicon from './images/Vector.png'
 import groupicon from './images/Vector2.png'
 import menuicon from './images/Vector3.png'
@@ -27,10 +28,9 @@ import likeicon from './images/Vector11.png'
 import leaveicon from './images/Vector12.png'
 import modalcloseicon from './images/Vector13.png'
 import canvascloseicon from './images/Vector14.png'
-import { useMediaQuery } from 'react-responsive'
 import arrowback from './images/arrow_back.png'
-import glogo from './images/g_logo.png'
-import fblogo from './images/fb_logo.png'
+import googlelogo from './images/g_logo.png'
+import facebooklogo from './images/fb_logo.png'
 import float from './images/float.png'
 import abstract from './images/abstract.png'
 const Main= () => {
@@ -38,9 +38,11 @@ const Main= () => {
                                                     [img5, 'Activism', false], 
                                                     [img6, 'MBA', false], 
                                                     [img7, 'Philosophy', false]])
+
     const [location, setlocation] = useState(false)
     const [location_update, setLocation_update] = useState('Noida, India')
-    const [user_signed_in, setUser_signed_in] = useState(false)
+    const [user_signed_in, setUser_signedin] = useState(false)
+
     const followgrp = (clicked) => {
         followgroup.map((group, index) => {
             (group[1] === clicked) && (followgroup[index][2] = !group[2])
@@ -49,14 +51,15 @@ const Main= () => {
     }
     const breaking_point_desktop = useMediaQuery({query: '(min-width: 790px)'})
     const breaking_point_mobile = useMediaQuery({query: '(min-width: 400px)'})
+
     return (
         <div>
             {
                 breaking_point_desktop &&
-                 <div className='Navbar'>
+            <div className='Navbar'>
                 <h5 magin className='logo'>
                 <span style={{color:'#27A365'}}>ATG.</span>W<span>
-                <img style={{marginBottom: '5px'}} alt='O' src={atglogo}/>
+                <img style={{marginBottom: '5px'}} alt='O' src={atgooglelogo}/>
                 </span>RLD</h5>
                 <div style={{width: '360px', paddingTop: '15px', paddingBottom: '15px'}} class="input-group flex-nowrap">
                     <span style={{borderBottomLeftRadius: '21px', borderTopLeftRadius: '21px', backgroundColor: '#F2F2F2', border: 'none'}} class="input-group-text" id="addon-wrapping">
@@ -67,7 +70,7 @@ const Main= () => {
                 {user_signed_in ? <>
                 <button class="btn btn-sm" type="button" style={{textAlign: 'right'}}>
                 <div style={{display: 'flex'}}>
-                    <img style={{marginTop: '-4px', width: '40px', height: '40px'}} src={u4} alt='profile pic'/>&nbsp;&nbsp;<p style={{marginTop: '5px'}}>Siddharth Goyal</p>
+                    <img style={{marginTop: '-4px', width: '40px', height: '40px'}} src={user4} alt='profile pic'/>&nbsp;&nbsp;<p style={{marginTop: '5px'}}>Siddharth Goyal</p>
                 </div>
                 </button>
                 <button disabled type="button" class="btn btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
@@ -84,15 +87,15 @@ const Main= () => {
                 </div>
             </div>}
             <div style={{backgroundColor: 'black'}}>
-                <img alt='banner' src={banner} style={{width: '100%', height: (breaking_point_desktop ? '440px' : (breaking_point_mobile ? '300px' : '200px')), marginTop: (breaking_point_desktop ? '72px' : ''), opacity: '0.5'}}/>
-                <h2 className='celabel' style={{fontSize: (breaking_point_mobile ? '' : '18px'), fontWeight: '700', color: 'white', position: 'absolute', marginTop: (breaking_point_desktop ? '-150px' : (breaking_point_mobile ? '-100px' : '-70px'))}}>Computer Engineering</h2>
-                <p className='celabel2' style={{fontSize: (breaking_point_mobile ? '' : '12px'), color: 'white', position: 'absolute', marginTop: (breaking_point_desktop ? '-110px' : (breaking_point_mobile ? '-65px' : '-40px'))}}>142,765 Computer Engineers follow this</p>
+                <img alt='mainphoto' src={mainphoto} style={{width: '100%', height: (breaking_point_desktop ? '440px' : (breaking_point_mobile ? '300px' : '200px')), marginTop: (breaking_point_desktop ? '72px' : ''), opacity: '0.5'}}/>
+                <h2 className='label' style={{fontSize: (breaking_point_mobile ? '' : '18px'), fontWeight: '700', color: 'white', position: 'absolute', marginTop: (breaking_point_desktop ? '-150px' : (breaking_point_mobile ? '-100px' : '-70px'))}}>Computer Engineering</h2>
+                <p className='label2' style={{fontSize: (breaking_point_mobile ? '' : '12px'), color: 'white', position: 'absolute', marginTop: (breaking_point_desktop ? '-110px' : (breaking_point_mobile ? '-65px' : '-40px'))}}>142,765 Computer Engineers follow this</p>
                 {!breaking_point_desktop && <>
                 <p><img alt='back' src={arrowback} style={{cursor: 'pointer', position: 'absolute', marginTop: (breaking_point_mobile ? '-275px' : '-183px'), marginLeft: '3.75%'}}/></p>
-                {user_signed_in ? <button onClick={() => setUser_signed_in(false)} style={{position: 'absolute', borderColor: 'white', color: 'white', borderRadius: '4px', marginTop: (breaking_point_mobile ? '-298px' : '-205px'), right: '0', marginRight: '3.75%'}} class="btn btn-sm" type="button">Leave Group</button>:
+                {user_signed_in ? <button onClick={() => setUser_signedin(false)} style={{position: 'absolute', borderColor: 'white', color: 'white', borderRadius: '4px', marginTop: (breaking_point_mobile ? '-298px' : '-205px'), right: '0', marginRight: '3.75%'}} class="btn btn-sm" type="button">Leave Group</button>:
                 <button style={{position: 'absolute', borderColor: 'white', color: 'white', borderRadius: '4px', marginTop: (breaking_point_mobile ? '-298px' : '-205px'), right: '0', marginRight: '3.75%'}}  data-bs-toggle="offcanvas" data-bs-target="#createaccountcanvas" aria-controls="offcanvasBottom" class="btn btn-sm" type="button">Join Group</button>}</>}
             </div>
-            <div className='whole'>
+            <div className='screen'>
             {breaking_point_desktop ? <nav style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row'}} class="nav">
             <div style={{display: 'flex', flexDirection: 'row'}}>
             <a style={{color: 'black'}}class="nav-link active" aria-current="page" href="#">All Posts(32)</a>
@@ -109,7 +112,7 @@ const Main= () => {
                 </button>
                 </div>
                 {user_signed_in ? 
-                <button onClick={() => setUser_signed_in(false)} style={{width: '134px', color: '#6A6A6B', borderColor: '#6A6A6B'}} class="btn btn-sm" type="button">
+                <button onClick={() => setUser_signedin(false)} style={{width: '134px', color: '#6A6A6B', borderColor: '#6A6A6B'}} class="btn btn-sm" type="button">
                     <span><img style={{marginTop: '-2px'}} alt='->' src={leaveicon} /></span> &nbsp; Leave Group
                 </button>: 
                 <button style={{width: '134px'}} data-bs-toggle="modal" data-bs-target="#createaccountmodal" class="btn btn-sm btn-primary" type="button">
@@ -123,7 +126,7 @@ const Main= () => {
             </div>}
             </div>
             {breaking_point_desktop && <hr className='dividerhr'/>}
-            <div className='wholeleft'>
+            <div className='screenleft'>
             <div style={{width: (breaking_point_desktop ? '50%' : '100%'), overflowY: 'scroll', height: (breaking_point_desktop ? '83vh' : '94vh')}}>
             <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
             <img src={img1} class="card-img-top" alt="First Pic" />
@@ -145,7 +148,7 @@ const Main= () => {
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 {breaking_point_desktop ? <>
                 <div style={{display: 'flex'}}>
-                    <img style={{width: '40px', height: '40px'}} src={u1} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Sarthak Kamra</h6>
+                    <img style={{width: '40px', height: '40px'}} src={user1} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Sarthak Kamra</h6>
                 </div>
                 <div style={{display: 'flex'}}>
                     <img alt='views' style={{width: '18px', height: '18px', marginTop: '10px'}} src="https://img.icons8.com/material-outlined/24/525252/visible--v1.png"/>&nbsp;<p style={{fontSize: '15px', color: '#525252', marginTop: '7.5px', marginBottom: '0px'}}>1.4k views</p> 
@@ -154,7 +157,7 @@ const Main= () => {
                     </button>
                 </div></> : <>
                 <div style={{display: 'flex'}}>
-                    <img style={{width: '40px', height: '40px'}} src={u1} alt='user1' />&nbsp;&nbsp;
+                    <img style={{width: '40px', height: '40px'}} src={user1} alt='user1' />&nbsp;&nbsp;
                     <div style={{display: 'flex', flexDirection: 'column'}}><h6 style={{fontSize: '15px', fontWeight: '700'}}>Sarthak Kamra</h6>
                     <p style={{fontSize: '15px', color: '#525252', marginTop: '-8px', marginBottom: '0px'}}>1.4k views</p></div>
                 </div>
@@ -186,7 +189,7 @@ const Main= () => {
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 {breaking_point_desktop ? <>
                 <div style={{display: 'flex'}}>
-                    <img style={{width: '40px', height: '40px'}} src={u2} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Sarah West</h6>
+                    <img style={{width: '40px', height: '40px'}} src={user2} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Sarah West</h6>
                 </div>
                 <div style={{display: 'flex'}}>
                     <img alt='views' style={{width: '18px', height: '18px', marginTop: '10px'}} src="https://img.icons8.com/material-outlined/24/525252/visible--v1.png"/>&nbsp;<p style={{fontSize: '15px', color: '#525252', marginTop: '7.5px', marginBottom: '0px'}}>1.4k views</p> 
@@ -195,7 +198,7 @@ const Main= () => {
                     </button>
                 </div></> : <>
                 <div style={{display: 'flex'}}>
-                    <img style={{width: '40px', height: '40px'}} src={u2} alt='user1' />&nbsp;&nbsp;
+                    <img style={{width: '40px', height: '40px'}} src={user2} alt='user1' />&nbsp;&nbsp;
                     <div style={{display: 'flex', flexDirection: 'column'}}><h6 style={{fontSize: '15px', fontWeight: '700'}}>Sarah West</h6>
                     <p style={{fontSize: '15px', color: '#525252', marginTop: '-8px', marginBottom: '0px'}}>4.8k views</p></div>
                 </div>
@@ -233,7 +236,7 @@ const Main= () => {
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 {breaking_point_desktop ? <>
                 <div style={{display: 'flex'}}>
-                    <img style={{width: '40px', height: '40px'}} src={u3} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Ronal Jones</h6>
+                    <img style={{width: '40px', height: '40px'}} src={user3} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Ronal Jones</h6>
                 </div>
                 <div style={{display: 'flex'}}>
                     <img alt='views' style={{width: '18px', height: '18px', marginTop: '10px'}} src="https://img.icons8.com/material-outlined/24/525252/visible--v1.png"/>&nbsp;<p style={{fontSize: '15px', color: '#525252', marginTop: '7.5px', marginBottom: '0px'}}>1.4k views</p> 
@@ -242,7 +245,7 @@ const Main= () => {
                     </button>
                 </div></> : <>
                 <div style={{display: 'flex'}}>
-                    <img style={{width: '40px', height: '40px'}} src={u3} alt='user1' />&nbsp;&nbsp;
+                    <img style={{width: '40px', height: '40px'}} src={user3} alt='user1' />&nbsp;&nbsp;
                     <div style={{display: 'flex', flexDirection: 'column'}}>
                     <h6 style={{fontSize: '15px', fontWeight: '700'}}>Ronal Jones</h6>
                     <p style={{fontSize: '15px', color: '#525252', marginTop: '-8px', marginBottom: '0px'}}>800 views</p></div>
@@ -280,7 +283,7 @@ const Main= () => {
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                 {breaking_point_desktop ? <>
                 <div style={{display: 'flex'}}>
-                    <img style={{width: '40px', height: '40px'}} src={u4} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Joseph Gray</h6>
+                    <img style={{width: '40px', height: '40px'}} src={user4} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Joseph Gray</h6>
                 </div>
                 <div style={{display: 'flex'}}>
                     <img alt='views' style={{width: '18px', height: '18px', marginTop: '10px'}} src="https://img.icons8.com/material-outlined/24/525252/visible--v1.png"/>&nbsp;
@@ -290,7 +293,7 @@ const Main= () => {
                     </button>
                 </div></> : <>
                 <div style={{display: 'flex'}}>
-                    <img style={{width: '40px', height: '40px'}} src={u4} alt='user1' />&nbsp;&nbsp;
+                    <img style={{width: '40px', height: '40px'}} src={user4} alt='user1' />&nbsp;&nbsp;
                     <div style={{display: 'flex', flexDirection: 'column'}}><h6 style={{fontSize: '15px', fontWeight: '700'}}>Joseph Gray</h6>
                     <p style={{fontSize: '15px', color: '#525252', marginTop: '-8px', marginBottom: '0px'}}>1.7k views</p></div>
                 </div>
@@ -306,7 +309,7 @@ const Main= () => {
             <br />
             <br />
             </div>
-            {breaking_point_desktop && <div className='wholeright'>
+            {breaking_point_desktop && <div className='screenright'>
                 <br/>
                 <div class="input-group flex-nowrap">
                     <span style={{paddingLeft: '0px', paddingRight: '1px', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', borderBottomLeftRadius: '0px', background: 'white'}} class="input-group-text" id="addon-wrapping"><img alt='location' src={locationicon} /></span>
@@ -370,13 +373,13 @@ const Main= () => {
                             <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="text" class="form-control" placeholder="Email" aria-describedby="addon-wrapping" />
                             <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Password" aria-describedby="addon-wrapping" />
                             <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Confirm Password" aria-describedby="addon-wrapping" />
-                            <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="modal" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary">Create Account</button>
+                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary">Create Account</button>
                             <br /><br />
-                            <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="modal" style={{height: '40px', marginBottom: '5px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
-                                <img alt='fb sign up' src={fblogo} />
+                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '40px', marginBottom: '5px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                                <img alt='fb sign up' src={facebooklogo} />
                             </button>
-                            <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="modal" style={{height: '40px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
-                                <img alt='google sign up' src={glogo} />
+                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '40px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                                <img alt='google sign up' src={googlelogo} />
                             </button>
                         </div>
                         <div style={{display: 'grid', width: '50%'}}>
@@ -405,13 +408,13 @@ const Main= () => {
                         <div style={{width: '50%'}}>
                             <input style={{height: '45px', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="text" class="form-control" placeholder="Email" aria-describedby="addon-wrapping" />
                             <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Password" aria-describedby="addon-wrapping" />
-                            <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="modal" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary">Create Account</button>
+                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary">Create Account</button>
                             <br /><br />
-                            <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="modal" style={{height: '40px', marginBottom: '5px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
-                                <img alt='fb sign up' src={fblogo} />
+                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '40px', marginBottom: '5px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                                <img alt='fb sign up' src={facebooklogo} />
                             </button>
-                            <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="modal" style={{height: '40px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
-                                <img alt='google sign up' src={glogo} />
+                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '40px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                                <img alt='google sign up' src={googlelogo} />
                             </button>
                             <p style={{cursor: 'pointer', fontSize: '13px', fontWeight: '600', marginTop: '15px', textAlign: 'center'}}>Forgot Password?</p>
                         </div>
@@ -437,15 +440,15 @@ const Main= () => {
                 <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Password" aria-describedby="addon-wrapping" />
                 <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Confirm Password" aria-describedby="addon-wrapping" />
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="offcanvas" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary w-50">Create Account</button>
+                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary w-50">Create Account</button>
                 <p data-bs-toggle="offcanvas" data-bs-target="#signupcanvas" data-bs-dismiss="offcanvas" style={{color: '#495057', textDecoration:'underline', cursor: 'pointer', marginTop: '25px', marginBottom: '5px'}}>or, Sign In</p>
                 </div>
                 <br />
-                <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '10px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
-                    <img alt='fb sign up' src={fblogo} />
+                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '10px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                    <img alt='fb sign up' src={facebooklogo} />
                 </button>
-                <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '20px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
-                    <img alt='google sign up' src={glogo} />
+                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '20px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                    <img alt='google sign up' src={googlelogo} />
                 </button>
                 <p style={{fontSize: '12px', textAlign: 'center', margin: '0px 40px 0px 40px'}}>By signing up, you agree to our Terms & conditions, Privacy policy</p>
             </div>
@@ -459,15 +462,15 @@ const Main= () => {
                 <input style={{height: '45px', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="text" class="form-control" placeholder="Email" aria-describedby="addon-wrapping" />
                 <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Password" aria-describedby="addon-wrapping" />
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="offcanvas" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary w-50">Sign In</button>
+                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary w-50">Sign In</button>
                 <p data-bs-toggle="offcanvas" data-bs-target="#createaccountcanvas" data-bs-dismiss="offcanvas"  style={{color: '#495057', textDecoration:'underline', cursor: 'pointer', marginTop: '25px', marginBottom: '5px'}}>or, Create Account</p>
                 </div>
                 <br />
-                <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '10px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
-                    <img alt='fb sign up' src={fblogo} />
+                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '10px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                    <img alt='fb sign up' src={facebooklogo} />
                 </button>
-                <button onClick={() => setUser_signed_in(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '20px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
-                    <img alt='google sign up' src={glogo} />
+                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '20px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                    <img alt='google sign up' src={googlelogo} />
                 </button>
                 <p style={{fontWeight: '600', fontSize: '12px', textAlign: 'center', margin: '0px 40px 0px 40px'}}>Forgot Password?</p>
             </div>
