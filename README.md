@@ -1,0 +1,1 @@
+Banao task 2 is the shortlisting task for internship hiring given by Banao Technologies. I decided to present this task as a Reactjs application and hosted in Vercel. If you like this project, give a star and follow me.
