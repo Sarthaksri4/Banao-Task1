@@ -34,13 +34,18 @@ import fblogo from './images/fb_logo.png'
 import float from './images/float.png'
 import abstract from './images/abstract.png'
 const Main= () => {
-    const [follow_groups, setFollow_groups] = useState([[rec4, 'Leisure', false], [rec5, 'Activism', false], [rec6, 'MBA', false], [rec7, 'Philosophy', false]])
-    const [location_edit_enabled, setLocation_edit_enabled] = useState(false)
+    const [followgroup, setfollowgroup] = useState([[rec4, 'Leisure', false], 
+                                                    [rec5, 'Activism', false], 
+                                                    [rec6, 'MBA', false], 
+                                                    [rec7, 'Philosophy', false]])
+    const [location, setlocation] = useState(false)
     const [location_update, setLocation_update] = useState('Noida, India')
     const [user_signed_in, setUser_signed_in] = useState(false)
-    const Updating_follow_grp = (clicked_group) => {
-        follow_groups.map((group, index) => {(group[1] === clicked_group) && (follow_groups[index][2] = !group[2])})
-        setFollow_groups([...follow_groups])
+    const followgrp = (clicked) => {
+        followgroup.map((group, index) => {
+            (group[1] === clicked) && (followgroup[index][2] = !group[2])
+        })
+        setfollowgroup([...followgroup])
     }
     const breaking_point_desktop = useMediaQuery({query: '(min-width: 790px)'})
     const breaking_point_mobile = useMediaQuery({query: '(min-width: 400px)'})
@@ -49,7 +54,10 @@ const Main= () => {
             {
                 breaking_point_desktop &&
                  <div className='Navbar'>
-                <h5 magin className='logo'><span style={{color:'#27A365'}}>ATG.</span>W<span><img style={{marginBottom: '5px'}} alt='O' src={atglogo}/></span>RLD</h5>
+                <h5 magin className='logo'>
+                <span style={{color:'#27A365'}}>ATG.</span>W<span>
+                <img style={{marginBottom: '5px'}} alt='O' src={atglogo}/>
+                </span>RLD</h5>
                 <div style={{width: '360px', paddingTop: '15px', paddingBottom: '15px'}} class="input-group flex-nowrap">
                     <span style={{borderBottomLeftRadius: '21px', borderTopLeftRadius: '21px', backgroundColor: '#F2F2F2', border: 'none'}} class="input-group-text" id="addon-wrapping"><img alt='search' src={searchicon}/></span>
                     <input style={{fontSize: '13px', borderTopRightRadius: '21px', borderBottomRightRadius: '21px', backgroundColor: '#F2F2F2', border: 'none'}} type="text" class="form-control" placeholder="Search for your favourite groups in ATG" aria-describedby="addon-wrapping" />
@@ -297,15 +305,15 @@ const Main= () => {
                 <br/>
                 <div class="input-group flex-nowrap">
                     <span style={{paddingLeft: '0px', paddingRight: '1px', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', borderBottomLeftRadius: '0px', background: 'white'}} class="input-group-text" id="addon-wrapping"><img alt='location' src={locationicon} /></span>
-                    <input disabled={!location_edit_enabled} style={{background: 'white', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', color: 'black'}} type="text" class="form-control" placeholder="Enter your location" value={location_update} onChange={(e) => {setLocation_update(e.target.value)}} aria-describedby="addon-wrapping" />
-                    {location_edit_enabled ? <>
+                    <input disabled={!location} style={{background: 'white', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', color: 'black'}} type="text" class="form-control" placeholder="Enter your location" value={location_update} onChange={(e) => {setLocation_update(e.target.value)}} aria-describedby="addon-wrapping" />
+                    {location ? <>
                     <span style={{borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', borderBottomRightRadius: '0px', background: 'white'}} class="input-group-text" id="addon-wrapping">
-                    <button onClick={() => setLocation_edit_enabled(false)} style={{marginRight: '-15px'}} type="button" class="btn">
+                    <button onClick={() => setlocation(false)} style={{marginRight: '-15px'}} type="button" class="btn">
                     <img style={{margin: 'none'}} alt='location' src={closeicon}/>
                     </button></span>
                     </> : <>
                     <span style={{borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', borderBottomRightRadius: '0px', background: 'white'}} class="input-group-text" id="addon-wrapping">
-                    <button onClick={() => setLocation_edit_enabled(true)} style={{marginRight: '-15px'}} type="button" class="btn">
+                    <button onClick={() => setlocation(true)} style={{marginRight: '-15px'}} type="button" class="btn">
                     <img style={{margin: 'none'}} alt='location' src={editicon}/>
                     </button></span>
                     </>}
@@ -319,13 +327,13 @@ const Main= () => {
                 <br />
                 <br />
                 <h6><img style={{marginTop: '-5px'}} src={likeicon}/> RECOMMENDED GROUPS</h6>
-                {follow_groups.map((group) => <>
+                {followgroup.map((group) => <>
                     <br />
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                         <div style={{display: 'flex'}}>
                             <img style={{width: '40px', height: '40px'}} src={group[0]} alt='grp1'/>&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '600', marginTop: '10px'}}>{group[1]}</h6>
                         </div>
-                        <button onClick={() => Updating_follow_grp(group[1])} type="button" style={{backgroundColor: (group[2] ? 'black' : '#EDEEF0'), borderRadius: '21px', color: (group[2] ? 'white' : 'black'), width: (group[2] ? '100px' : '85px'), height: '30px', marginTop: '6px', paddingTop: '2px'}} class="btn">{group[2] ? 'Followed' : 'Follow'}</button>
+                        <button onClick={() => followgrp(group[1])} type="button" style={{backgroundColor: (group[2] ? 'black' : '#EDEEF0'), borderRadius: '21px', color: (group[2] ? 'white' : 'black'), width: (group[2] ? '100px' : '85px'), height: '30px', marginTop: '6px', paddingTop: '2px'}} class="btn">{group[2] ? 'Followed' : 'Follow'}</button>
                     </div>
                 </>)}
                 <br /><br /><br />
