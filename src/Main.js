@@ -2,13 +2,13 @@ import React, {useState} from 'react'
 import './Main.css'
 import atglogo from './images/Union_1.png'
 import banner from './images/Rectangle_2.png'
-import rec1 from './images/Rectangle3.png'
-import rec2 from './images/Rectangle4.png'
-import rec3 from './images/Rectangle5.png'
-import rec4 from './images/Rectangle6.png'
-import rec5 from './images/Rectangle7.png'
-import rec6 from './images/Rectangle8.png'
-import rec7 from './images/Rectangle9.png'
+import img1 from './images/Rectangle3.png'
+import img2 from './images/Rectangle4.png'
+import img3 from './images/Rectangle5.png'
+import img4 from './images/Rectangle6.png'
+import img5 from './images/Rectangle7.png'
+import img6 from './images/Rectangle8.png'
+import img7 from './images/Rectangle9.png'
 import u1 from './images/user1.png'
 import u2 from './images/user2.png'
 import u3 from './images/user3.png'
@@ -34,10 +34,10 @@ import fblogo from './images/fb_logo.png'
 import float from './images/float.png'
 import abstract from './images/abstract.png'
 const Main= () => {
-    const [followgroup, setfollowgroup] = useState([[rec4, 'Leisure', false], 
-                                                    [rec5, 'Activism', false], 
-                                                    [rec6, 'MBA', false], 
-                                                    [rec7, 'Philosophy', false]])
+    const [followgroup, setfollowgroup] = useState([[img4, 'Leisure', false], 
+                                                    [img5, 'Activism', false], 
+                                                    [img6, 'MBA', false], 
+                                                    [img7, 'Philosophy', false]])
     const [location, setlocation] = useState(false)
     const [location_update, setLocation_update] = useState('Noida, India')
     const [user_signed_in, setUser_signed_in] = useState(false)
@@ -59,7 +59,8 @@ const Main= () => {
                 <img style={{marginBottom: '5px'}} alt='O' src={atglogo}/>
                 </span>RLD</h5>
                 <div style={{width: '360px', paddingTop: '15px', paddingBottom: '15px'}} class="input-group flex-nowrap">
-                    <span style={{borderBottomLeftRadius: '21px', borderTopLeftRadius: '21px', backgroundColor: '#F2F2F2', border: 'none'}} class="input-group-text" id="addon-wrapping"><img alt='search' src={searchicon}/></span>
+                    <span style={{borderBottomLeftRadius: '21px', borderTopLeftRadius: '21px', backgroundColor: '#F2F2F2', border: 'none'}} class="input-group-text" id="addon-wrapping">
+                    <img alt='search' src={searchicon}/></span>
                     <input style={{fontSize: '13px', borderTopRightRadius: '21px', borderBottomRightRadius: '21px', backgroundColor: '#F2F2F2', border: 'none'}} type="text" class="form-control" placeholder="Search for your favourite groups in ATG" aria-describedby="addon-wrapping" />
                 </div>
                 <div style={{marginRight: '3%', width: '200px', paddingTop: '15px', paddingBottom: '15px'}} class="btn-group">
@@ -125,7 +126,7 @@ const Main= () => {
             <div className='wholeleft'>
             <div style={{width: (breaking_point_desktop ? '50%' : '100%'), overflowY: 'scroll', height: (breaking_point_desktop ? '83vh' : '94vh')}}>
             <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
-            <img src={rec1} class="card-img-top" alt="First Pic" />
+            <img src={img1} class="card-img-top" alt="First Pic" />
             <div class="card-body">
                 <h6 style={{fontWeight: '540'}} class="card-title">&#9997; Article</h6>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}><p style={{fontWeight: '700', width:'90%'}} class="card-text">What if famous brands had regular fonts? Meet RegulaBrands!</p>
@@ -167,7 +168,7 @@ const Main= () => {
             </div>
             <br />
             <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
-            <img src={rec2} class="card-img-top" alt="Sec Pic" />
+            <img src={img2} class="card-img-top" alt="Sec Pic" />
             <div class="card-body">
                 <h6 style={{fontWeight: '540'}} class="card-title">&#128300; Education</h6>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}><p style={{fontWeight: '700', width:'90%'}} class="card-text">Tax Benefits for Investment under National Pension Scheme launched by Government</p>
@@ -208,10 +209,11 @@ const Main= () => {
             </div>
             <br />
             <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
-            <img src={rec3} class="card-img-top" alt="Third Pic" />
+            <img src={img3} class="card-img-top" alt="Third Pic" />
             <div class="card-body">
                 <h6 style={{fontWeight: '540'}} class="card-title">&#128197; Meetup</h6>
-                <div style={{display: 'flex', justifyContent: 'space-between'}}><p style={{fontWeight: '700', width:'90%'}} class="card-text">Finance & Investment Elite Social Mixer @Lujiazui</p>
+                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <p style={{fontWeight: '700', width:'90%'}} class="card-text">Finance & Investment Elite Social Mixer @Lujiazui</p>
                 <div class="btn-group">
                 <button style={{height: '25px', width: '25px'}} type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                     <img style={{marginTop: '-16px', marginLeft: '-8px'}} alt='...' src={menuicon} />
@@ -241,7 +243,8 @@ const Main= () => {
                 </div></> : <>
                 <div style={{display: 'flex'}}>
                     <img style={{width: '40px', height: '40px'}} src={u3} alt='user1' />&nbsp;&nbsp;
-                    <div style={{display: 'flex', flexDirection: 'column'}}><h6 style={{fontSize: '15px', fontWeight: '700'}}>Ronal Jones</h6>
+                    <div style={{display: 'flex', flexDirection: 'column'}}>
+                    <h6 style={{fontSize: '15px', fontWeight: '700'}}>Ronal Jones</h6>
                     <p style={{fontSize: '15px', color: '#525252', marginTop: '-8px', marginBottom: '0px'}}>800 views</p></div>
                 </div>
                 <div style={{display: 'flex'}}> 
@@ -256,7 +259,8 @@ const Main= () => {
             <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
             <div class="card-body">
                 <h6 style={{fontWeight: '540'}} class="card-title">&#128188; Job</h6>
-                <div style={{display: 'flex', justifyContent: 'space-between'}}><p style={{fontWeight: '700', width:'90%'}} class="card-text">Software Developer</p>
+                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <p style={{fontWeight: '700', width:'90%'}} class="card-text">Software Developer</p>
                 <div class="btn-group">
                 <button style={{height: '25px', width: '25px'}} type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
                     <img style={{marginTop: '-16px', marginLeft: '-8px'}} alt='...' src={menuicon} />
@@ -279,7 +283,8 @@ const Main= () => {
                     <img style={{width: '40px', height: '40px'}} src={u4} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Joseph Gray</h6>
                 </div>
                 <div style={{display: 'flex'}}>
-                    <img alt='views' style={{width: '18px', height: '18px', marginTop: '10px'}} src="https://img.icons8.com/material-outlined/24/525252/visible--v1.png"/>&nbsp;<p style={{fontSize: '15px', color: '#525252', marginTop: '7.5px', marginBottom: '0px'}}>1.4k views</p> 
+                    <img alt='views' style={{width: '18px', height: '18px', marginTop: '10px'}} src="https://img.icons8.com/material-outlined/24/525252/visible--v1.png"/>&nbsp;
+                    <p style={{fontSize: '15px', color: '#525252', marginTop: '7.5px', marginBottom: '0px'}}>1.4k views</p> 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn" style={{backgroundColor: '#EDEEF0'}} type="button">
                     <img alt='share' src={shareicon} />
                     </button>
@@ -305,7 +310,8 @@ const Main= () => {
                 <br/>
                 <div class="input-group flex-nowrap">
                     <span style={{paddingLeft: '0px', paddingRight: '1px', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', borderBottomLeftRadius: '0px', background: 'white'}} class="input-group-text" id="addon-wrapping"><img alt='location' src={locationicon} /></span>
-                    <input disabled={!location} style={{background: 'white', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', color: 'black'}} type="text" class="form-control" placeholder="Enter your location" value={location_update} onChange={(e) => {setLocation_update(e.target.value)}} aria-describedby="addon-wrapping" />
+                    <input disabled={!location} style={{background: 'white', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', color: 'black'}} type="text" class="form-control" placeholder="Enter your location" value={location_update} 
+                    onChange={(e) => {setLocation_update(e.target.value)}} aria-describedby="addon-wrapping" />
                     {location ? <>
                     <span style={{borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', borderBottomRightRadius: '0px', background: 'white'}} class="input-group-text" id="addon-wrapping">
                     <button onClick={() => setlocation(false)} style={{marginRight: '-15px'}} type="button" class="btn">
@@ -331,7 +337,8 @@ const Main= () => {
                     <br />
                     <div style={{display: 'flex', justifyContent: 'space-between'}}>
                         <div style={{display: 'flex'}}>
-                            <img style={{width: '40px', height: '40px'}} src={group[0]} alt='grp1'/>&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '600', marginTop: '10px'}}>{group[1]}</h6>
+                            <img style={{width: '40px', height: '40px'}} src={group[0]} alt='grp1'/>&nbsp;&nbsp;
+                            <h6 style={{fontSize: '15px', fontWeight: '600', marginTop: '10px'}}>{group[1]}</h6>
                         </div>
                         <button onClick={() => followgrp(group[1])} type="button" style={{backgroundColor: (group[2] ? 'black' : '#EDEEF0'), borderRadius: '21px', color: (group[2] ? 'white' : 'black'), width: (group[2] ? '100px' : '85px'), height: '30px', marginTop: '6px', paddingTop: '2px'}} class="btn">{group[2] ? 'Followed' : 'Follow'}</button>
                     </div>
