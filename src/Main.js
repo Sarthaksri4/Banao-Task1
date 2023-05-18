@@ -40,8 +40,8 @@ const Main= () => {
                                                     [img7, 'Philosophy', false]])
 
     const [location, setlocation] = useState(false)
-    const [location_update, setLocation_update] = useState('Noida, India')
-    const [user_signed_in, setUser_signedin] = useState(false)
+    const [locationupdate, setlocationupdate] = useState('Noida, India')
+    const [usersignedin, setusersignedin] = useState(false)
 
     const followgrp = (clicked) => {
         followgroup.map((group, index) => {
@@ -49,13 +49,13 @@ const Main= () => {
         })
         setfollowgroup([...followgroup])
     }
-    const breaking_point_desktop = useMediaQuery({query: '(min-width: 790px)'})
-    const breaking_point_mobile = useMediaQuery({query: '(min-width: 400px)'})
+    const breakingdesktop= useMediaQuery({query: '(min-width: 790px)'})
+    const breakingmobile = useMediaQuery({query: '(min-width: 400px)'})
 
     return (
         <div>
             {
-                breaking_point_desktop &&
+                breakingdesktop&&
             <div className='Navbar'>
                 <h5 magin className='logo'>
                 <span style={{color:'#27A365'}}>ATG.</span>W<span>
@@ -67,7 +67,7 @@ const Main= () => {
                     <input style={{fontSize: '13px', borderTopRightRadius: '21px', borderBottomRightRadius: '21px', backgroundColor: '#F2F2F2', border: 'none'}} type="text" class="form-control" placeholder="Search for your favourite groups in ATG" aria-describedby="addon-wrapping" />
                 </div>
                 <div style={{marginRight: '3%', width: '200px', paddingTop: '15px', paddingBottom: '15px'}} class="btn-group">
-                {user_signed_in ? <>
+                {usersignedin ? <>
                 <button class="btn btn-sm" type="button" style={{textAlign: 'right'}}>
                 <div style={{display: 'flex'}}>
                     <img style={{marginTop: '-4px', width: '40px', height: '40px'}} src={user4} alt='profile pic'/>&nbsp;&nbsp;<p style={{marginTop: '5px'}}>Siddharth Goyal</p>
@@ -87,16 +87,16 @@ const Main= () => {
                 </div>
             </div>}
             <div style={{backgroundColor: 'black'}}>
-                <img alt='mainphoto' src={mainphoto} style={{width: '100%', height: (breaking_point_desktop ? '440px' : (breaking_point_mobile ? '300px' : '200px')), marginTop: (breaking_point_desktop ? '72px' : ''), opacity: '0.5'}}/>
-                <h2 className='label' style={{fontSize: (breaking_point_mobile ? '' : '18px'), fontWeight: '700', color: 'white', position: 'absolute', marginTop: (breaking_point_desktop ? '-150px' : (breaking_point_mobile ? '-100px' : '-70px'))}}>Computer Engineering</h2>
-                <p className='label2' style={{fontSize: (breaking_point_mobile ? '' : '12px'), color: 'white', position: 'absolute', marginTop: (breaking_point_desktop ? '-110px' : (breaking_point_mobile ? '-65px' : '-40px'))}}>142,765 Computer Engineers follow this</p>
-                {!breaking_point_desktop && <>
-                <p><img alt='back' src={arrowback} style={{cursor: 'pointer', position: 'absolute', marginTop: (breaking_point_mobile ? '-275px' : '-183px'), marginLeft: '3.75%'}}/></p>
-                {user_signed_in ? <button onClick={() => setUser_signedin(false)} style={{position: 'absolute', borderColor: 'white', color: 'white', borderRadius: '4px', marginTop: (breaking_point_mobile ? '-298px' : '-205px'), right: '0', marginRight: '3.75%'}} class="btn btn-sm" type="button">Leave Group</button>:
-                <button style={{position: 'absolute', borderColor: 'white', color: 'white', borderRadius: '4px', marginTop: (breaking_point_mobile ? '-298px' : '-205px'), right: '0', marginRight: '3.75%'}}  data-bs-toggle="offcanvas" data-bs-target="#createaccountcanvas" aria-controls="offcanvasBottom" class="btn btn-sm" type="button">Join Group</button>}</>}
+                <img alt='mainphoto' src={mainphoto} style={{width: '100%', height: (breakingdesktop? '440px' : (breakingmobile ? '300px' : '200px')), marginTop: (breakingdesktop? '72px' : ''), opacity: '0.5'}}/>
+                <h2 className='label' style={{fontSize: (breakingmobile ? '' : '18px'), fontWeight: '700', color: 'white', position: 'absolute', marginTop: (breakingdesktop? '-150px' : (breakingmobile ? '-100px' : '-70px'))}}>Computer Engineering</h2>
+                <p className='label2' style={{fontSize: (breakingmobile ? '' : '12px'), color: 'white', position: 'absolute', marginTop: (breakingdesktop? '-110px' : (breakingmobile ? '-65px' : '-40px'))}}>142,765 Computer Engineers follow this</p>
+                {!breakingdesktop&& <>
+                <p><img alt='back' src={arrowback} style={{cursor: 'pointer', position: 'absolute', marginTop: (breakingmobile ? '-275px' : '-183px'), marginLeft: '3.75%'}}/></p>
+                {usersignedin ? <button onClick={() => setusersignedin(false)} style={{position: 'absolute', borderColor: 'white', color: 'white', borderRadius: '4px', marginTop: (breakingmobile ? '-298px' : '-205px'), right: '0', marginRight: '3.75%'}} class="btn btn-sm" type="button">Leave Group</button>:
+                <button style={{position: 'absolute', borderColor: 'white', color: 'white', borderRadius: '4px', marginTop: (breakingmobile ? '-298px' : '-205px'), right: '0', marginRight: '3.75%'}}  data-bs-toggle="offcanvas" data-bs-target="#createaccountcanvas" aria-controls="offcanvasBottom" class="btn btn-sm" type="button">Join Group</button>}</>}
             </div>
             <div className='screen'>
-            {breaking_point_desktop ? <nav style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row'}} class="nav">
+            {breakingdesktop? <nav style={{display: 'flex', justifyContent: 'space-between', flexDirection: 'row'}} class="nav">
             <div style={{display: 'flex', flexDirection: 'row'}}>
             <a style={{color: 'black'}}class="nav-link active" aria-current="page" href="#">All Posts(32)</a>
             <a style={{color: '#8A8A8A'}} class="nav-link" href="#">Article</a>
@@ -111,8 +111,8 @@ const Main= () => {
                 <button type="button" style={{borderColor: '#EDEEF0', backgroundColor: '#EDEEF0'}} class="btn btn-light btn-sm dropdown-toggle dropdown-toggle-split">
                 </button>
                 </div>
-                {user_signed_in ? 
-                <button onClick={() => setUser_signedin(false)} style={{width: '134px', color: '#6A6A6B', borderColor: '#6A6A6B'}} class="btn btn-sm" type="button">
+                {usersignedin ? 
+                <button onClick={() => setusersignedin(false)} style={{width: '134px', color: '#6A6A6B', borderColor: '#6A6A6B'}} class="btn btn-sm" type="button">
                     <span><img style={{marginTop: '-2px'}} alt='->' src={leaveicon} /></span> &nbsp; Leave Group
                 </button>: 
                 <button style={{width: '134px'}} data-bs-toggle="modal" data-bs-target="#createaccountmodal" class="btn btn-sm btn-primary" type="button">
@@ -125,10 +125,10 @@ const Main= () => {
                     </button>
             </div>}
             </div>
-            {breaking_point_desktop && <hr className='dividerhr'/>}
+            {breakingdesktop&& <hr className='response'/>}
             <div className='screenleft'>
-            <div style={{width: (breaking_point_desktop ? '50%' : '100%'), overflowY: 'scroll', height: (breaking_point_desktop ? '83vh' : '94vh')}}>
-            <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
+            <div style={{width: (breakingdesktop? '50%' : '100%'), overflowY: 'scroll', height: (breakingdesktop? '83vh' : '94vh')}}>
+            <div class="card" style={{width: '100%', boxShadow: (breakingdesktop? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breakingdesktop? '' : 'none')}}>
             <img src={img1} class="card-img-top" alt="First Pic" />
             <div class="card-body">
                 <h6 style={{fontWeight: '540'}} class="card-title">&#9997; Article</h6>
@@ -146,7 +146,7 @@ const Main= () => {
                 </div> 
                 <h6 style={{marginBottom: '30px', color: '#5C5C5C', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>I’ve worked in UX for the better part of a decade. From now on, I plan to reidf bsgakksa shly akssdjj shadkj</h6>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                {breaking_point_desktop ? <>
+                {breakingdesktop? <>
                 <div style={{display: 'flex'}}>
                     <img style={{width: '40px', height: '40px'}} src={user1} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Sarthak Kamra</h6>
                 </div>
@@ -170,7 +170,7 @@ const Main= () => {
             </div>
             </div>
             <br />
-            <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
+            <div class="card" style={{width: '100%', boxShadow: (breakingdesktop? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breakingdesktop? '' : 'none')}}>
             <img src={img2} class="card-img-top" alt="Sec Pic" />
             <div class="card-body">
                 <h6 style={{fontWeight: '540'}} class="card-title">&#128300; Education</h6>
@@ -187,7 +187,7 @@ const Main= () => {
                 </div></div> 
                 <h6 style={{marginBottom: '30px', color: '#5C5C5C', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>I’ve worked in UX for the better part of a decade. From now on, I plan to reidf bsgakksa shly akssdjj shadkj</h6>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                {breaking_point_desktop ? <>
+                {breakingdesktop? <>
                 <div style={{display: 'flex'}}>
                     <img style={{width: '40px', height: '40px'}} src={user2} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Sarah West</h6>
                 </div>
@@ -211,7 +211,7 @@ const Main= () => {
             </div>
             </div>
             <br />
-            <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
+            <div class="card" style={{width: '100%', boxShadow: (breakingdesktop? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breakingdesktop? '' : 'none')}}>
             <img src={img3} class="card-img-top" alt="Third Pic" />
             <div class="card-body">
                 <h6 style={{fontWeight: '540'}} class="card-title">&#128197; Meetup</h6>
@@ -234,7 +234,7 @@ const Main= () => {
                 <button style={{borderRadius: '8px', color: '#E56135', borderColor: '#A9AEB8'}} type="button" class="btn w-100">Visit Website</button>
                 <br /><br />
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                {breaking_point_desktop ? <>
+                {breakingdesktop? <>
                 <div style={{display: 'flex'}}>
                     <img style={{width: '40px', height: '40px'}} src={user3} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Ronal Jones</h6>
                 </div>
@@ -259,7 +259,7 @@ const Main= () => {
             </div>
             </div>
             <br />
-            <div class="card" style={{width: '100%', boxShadow: (breaking_point_desktop ? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breaking_point_desktop ? '' : 'none')}}>
+            <div class="card" style={{width: '100%', boxShadow: (breakingdesktop? '' : '0px 1px 2px rgba(0, 0, 0, 0.12)'), border: (breakingdesktop? '' : 'none')}}>
             <div class="card-body">
                 <h6 style={{fontWeight: '540'}} class="card-title">&#128188; Job</h6>
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
@@ -275,13 +275,13 @@ const Main= () => {
                 </ul>
                 </div></div>
                 <div style={{display: 'flex'}}>
-                    <img alt='views' style={{marginTop: '2px', width: '15px', height: '15px'}} src={jobicon} />&nbsp;<p style={{fontSize: '14px', color: 'black', width: (breaking_point_desktop ? '' : '150px'), overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>Innovaccer Analytics Private Ltd.</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img alt='views' style={{marginTop: '2px', width: '15px', height: '15px'}} src={jobicon} />&nbsp;<p style={{fontSize: '14px', color: 'black', width: (breakingdesktop? '' : '150px'), overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap'}}>Innovaccer Analytics Private Ltd.</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <img alt='views' style={{marginTop: '2px', width: '10px', height: '15px'}} src={locationicon} />&nbsp;<p style={{fontSize: '14px', color: 'black'}}>Noida, India</p>
                 </div>
                 <button style={{borderRadius: '8px', color: '#02B875', borderColor: '#A9AEB8'}} type="button" class="btn w-100">Apply on Timesjobs</button>
                 <br /><br />
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                {breaking_point_desktop ? <>
+                {breakingdesktop? <>
                 <div style={{display: 'flex'}}>
                     <img style={{width: '40px', height: '40px'}} src={user4} alt='user1' />&nbsp;&nbsp;<h6 style={{fontSize: '15px', fontWeight: '700', marginTop: '10px'}}>Joseph Gray</h6>
                 </div>
@@ -309,12 +309,12 @@ const Main= () => {
             <br />
             <br />
             </div>
-            {breaking_point_desktop && <div className='screenright'>
+            {breakingdesktop&& <div className='screenright'>
                 <br/>
                 <div class="input-group flex-nowrap">
                     <span style={{paddingLeft: '0px', paddingRight: '1px', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', borderBottomLeftRadius: '0px', background: 'white'}} class="input-group-text" id="addon-wrapping"><img alt='location' src={locationicon} /></span>
-                    <input disabled={!location} style={{background: 'white', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', color: 'black'}} type="text" class="form-control" placeholder="Enter your location" value={location_update} 
-                    onChange={(e) => {setLocation_update(e.target.value)}} aria-describedby="addon-wrapping" />
+                    <input disabled={!location} style={{background: 'white', borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', color: 'black'}} type="text" class="form-control" placeholder="Enter your location" value={locationupdate} 
+                    onChange={(e) => {setlocationupdate(e.target.value)}} aria-describedby="addon-wrapping" />
                     {location ? <>
                     <span style={{borderTop: 'none', borderLeft: 'none', borderRight: 'none', borderColor: '#B8B8B8', borderBottomRightRadius: '0px', background: 'white'}} class="input-group-text" id="addon-wrapping">
                     <button onClick={() => setlocation(false)} style={{marginRight: '-15px'}} type="button" class="btn">
@@ -332,7 +332,7 @@ const Main= () => {
                     <img style={{color: 'gray', marginTop: '5px', marginRight: '5px', height: '13.3px', width:'13.3px'}} alt='info' src={infoicon} />
                     <p style={{color: 'gray', fontSize: '15px'}}>Your location will help us serve better and extend a personalised experience.</p>
                 </div>
-                <div style={{display: (!user_signed_in && 'none')}}>
+                <div style={{display: (!usersignedin && 'none')}}>
                 <br />
                 <br />
                 <h6><img style={{marginTop: '-5px'}} src={likeicon}/> RECOMMENDED GROUPS</h6>
@@ -373,12 +373,12 @@ const Main= () => {
                             <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="text" class="form-control" placeholder="Email" aria-describedby="addon-wrapping" />
                             <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Password" aria-describedby="addon-wrapping" />
                             <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Confirm Password" aria-describedby="addon-wrapping" />
-                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary">Create Account</button>
+                            <button onClick={() => setusersignedin(true)} data-bs-dismiss="modal" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary">Create Account</button>
                             <br /><br />
-                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '40px', marginBottom: '5px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                            <button onClick={() => setusersignedin(true)} data-bs-dismiss="modal" style={{height: '40px', marginBottom: '5px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
                                 <img alt='fb sign up' src={facebooklogo} />
                             </button>
-                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '40px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                            <button onClick={() => setusersignedin(true)} data-bs-dismiss="modal" style={{height: '40px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
                                 <img alt='google sign up' src={googlelogo} />
                             </button>
                         </div>
@@ -408,12 +408,12 @@ const Main= () => {
                         <div style={{width: '50%'}}>
                             <input style={{height: '45px', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="text" class="form-control" placeholder="Email" aria-describedby="addon-wrapping" />
                             <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Password" aria-describedby="addon-wrapping" />
-                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary">Create Account</button>
+                            <button onClick={() => setusersignedin(true)} data-bs-dismiss="modal" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary">Create Account</button>
                             <br /><br />
-                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '40px', marginBottom: '5px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                            <button onClick={() => setusersignedin(true)} data-bs-dismiss="modal" style={{height: '40px', marginBottom: '5px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
                                 <img alt='fb sign up' src={facebooklogo} />
                             </button>
-                            <button onClick={() => setUser_signedin(true)} data-bs-dismiss="modal" style={{height: '40px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                            <button onClick={() => setusersignedin(true)} data-bs-dismiss="modal" style={{height: '40px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
                                 <img alt='google sign up' src={googlelogo} />
                             </button>
                             <p style={{cursor: 'pointer', fontSize: '13px', fontWeight: '600', marginTop: '15px', textAlign: 'center'}}>Forgot Password?</p>
@@ -440,14 +440,14 @@ const Main= () => {
                 <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Password" aria-describedby="addon-wrapping" />
                 <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Confirm Password" aria-describedby="addon-wrapping" />
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary w-50">Create Account</button>
+                <button onClick={() => setusersignedin(true)} data-bs-dismiss="offcanvas" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary w-50">Create Account</button>
                 <p data-bs-toggle="offcanvas" data-bs-target="#signupcanvas" data-bs-dismiss="offcanvas" style={{color: '#495057', textDecoration:'underline', cursor: 'pointer', marginTop: '25px', marginBottom: '5px'}}>or, Sign In</p>
                 </div>
                 <br />
-                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '10px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                <button onClick={() => setusersignedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '10px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
                     <img alt='fb sign up' src={facebooklogo} />
                 </button>
-                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '20px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                <button onClick={() => setusersignedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '20px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
                     <img alt='google sign up' src={googlelogo} />
                 </button>
                 <p style={{fontSize: '12px', textAlign: 'center', margin: '0px 40px 0px 40px'}}>By signing up, you agree to our Terms & conditions, Privacy policy</p>
@@ -462,20 +462,20 @@ const Main= () => {
                 <input style={{height: '45px', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="text" class="form-control" placeholder="Email" aria-describedby="addon-wrapping" />
                 <input style={{height: '45px', borderTop: 'none', borderRadius: '0px', backgroundColor: '#F7F8FA'}} type="password" class="form-control" placeholder="Password" aria-describedby="addon-wrapping" />
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary w-50">Sign In</button>
+                <button onClick={() => setusersignedin(true)} data-bs-dismiss="offcanvas" style={{height: '45px', marginTop: '15px', borderRadius: '25px', width: '100%'}} type="button" class="btn btn-primary w-50">Sign In</button>
                 <p data-bs-toggle="offcanvas" data-bs-target="#createaccountcanvas" data-bs-dismiss="offcanvas"  style={{color: '#495057', textDecoration:'underline', cursor: 'pointer', marginTop: '25px', marginBottom: '5px'}}>or, Create Account</p>
                 </div>
                 <br />
-                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '10px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                <button onClick={() => setusersignedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '10px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
                     <img alt='fb sign up' src={facebooklogo} />
                 </button>
-                <button onClick={() => setUser_signedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '20px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
+                <button onClick={() => setusersignedin(true)} data-bs-dismiss="offcanvas" style={{height: '40px', marginBottom: '20px', width: '100%', borderColor: '#D9D9DB'}} class="btn btn-sm" type="button">
                     <img alt='google sign up' src={googlelogo} />
                 </button>
                 <p style={{fontWeight: '600', fontSize: '12px', textAlign: 'center', margin: '0px 40px 0px 40px'}}>Forgot Password?</p>
             </div>
             </div>
-            {!breaking_point_desktop && <a href='#' style={{position: 'fixed', right: '10px', bottom: '10px'}}><img style={{cursor: 'pointer'}} alt='float' src={float} /></a>}
+            {!breakingdesktop&& <a href='#' style={{position: 'fixed', right: '10px', bottom: '10px'}}><img style={{cursor: 'pointer'}} alt='float' src={float} /></a>}
         </div>
     )
 }

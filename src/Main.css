@@ -13,14 +13,6 @@ html {
     background: #ffffff;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.12);
 }
-.btn:focus {
-    outline: none !important;
-    box-shadow: none !important;
- }
-  .form-control:focus {
-    outline: none !important;
-    box-shadow: none !important;
-  }
 .logo{
     display: initial;
     width: 180px;
@@ -36,12 +28,20 @@ html {
 .label2{
     margin-left: 15%
 }
+.btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
+ }
+  .form-control:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 .screen{
     margin-top: 20px;
     margin-left: 15%;
     margin-right: 15%;
 }
-.dividerhr{
+.response{
     margin-left: 15%;
     margin-right: 15%;
 }
@@ -69,7 +69,8 @@ html {
         margin-left: 11.25%;
         margin-right: 11.25%
     }
-    .dividerhr{
+    .response
+{
         margin-left: 11.25%;
         margin-right: 11.25%
     }
@@ -94,7 +95,8 @@ html {
         margin-left: 7.5%;
         margin-right: 7.5%;
     }
-    .dividerhr{
+    .response
+{
         margin-left: 7.5%;
         margin-right: 7.5%;
     }
@@ -119,7 +121,8 @@ html {
         margin-left: 3.75%;
         margin-right: 3.75%;
     }
-    .dividerhr{
+    .response
+{
         margin-left: 3.75%;
         margin-right: 3.75%;
     }
@@ -141,7 +144,8 @@ html {
         margin-left: 0%;
         margin-right: 0%;
     }
-    .dividerhr{
+    .response
+{
         margin-left: 0%;
         margin-right: 0%;
     }
